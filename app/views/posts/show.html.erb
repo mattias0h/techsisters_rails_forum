@@ -1,0 +1,25 @@
+<p>
+  <strong>Title:</strong>
+  <%= @post.title %>
+  <strong>Author:</strong>
+  <%= @post.user.email %>
+</p>
+
+<div class="bg-light mb-5">
+  <%= simple_format(@post.content, class: 'p-4') %>
+</div>
+
+<strong>Comments:</strong>
+<%- @comments.each do |comment| %>
+  <div>
+    <blockquote class="blockquote font-italic">
+      <%= simple_format(comment.content) %>
+      <footer class="blockquote-footer"><%= comment.user.email %></footer>
+    </blockquote>
+  </div>
+<% end%>
+
+<%= render 'comments/form' %>
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>

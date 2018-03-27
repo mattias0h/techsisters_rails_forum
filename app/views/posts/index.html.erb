@@ -1,0 +1,19 @@
+<h1>Posts</h1>
+
+<ul class="list-group">
+  <% @posts.each do |post| %>
+    <li class="list-group-item">
+      <%= link_to post.title, post, class: 'h4' %>
+      <span class="font-italic text-secondary"><%= post.user.email %></span>
+      <span class="float-right">
+        <%= link_to 'Show', post, class: 'btn btn-sm btn-secondary' %>
+        <%= link_to 'Edit', edit_post_path(post), class: 'btn btn-sm btn-secondary' %>
+        <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-secondary' %>
+      </span>
+    </li>
+  <% end %>
+</ul>
+
+<br>
+
+<%= link_to 'New Post', new_post_path, class: 'btn btn-primary' %>
