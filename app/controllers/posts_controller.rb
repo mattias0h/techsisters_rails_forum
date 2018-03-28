@@ -10,8 +10,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-    @comment = Comment.new(post_id: @post.id)
-    @comments = @post.comments
+    @comment = Comment.new
   end
 
   # GET /posts/new
@@ -26,7 +25,7 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    @post = Post.new(post_params.merge(user_id: current_user.id))
+    @post = current_user.posts.new(post_params)
 
     respond_to do |format|
       if @post.save
@@ -56,7 +55,7 @@ class PostsController < ApplicationController
   # DELETE /posts/1
   # DELETE /posts/1.json
   def destroy
-    @post.destroy post_id:
+    @post.destroy
     respond_to do |format|
       format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
       format.json { head :no_content }

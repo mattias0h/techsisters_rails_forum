@@ -10,7 +10,7 @@
 </div>
 
 <strong>Comments:</strong>
-<%- @comments.each do |comment| %>
+<%- @post.comments.each do |comment| %>
   <div>
     <blockquote class="blockquote font-italic">
       <%= simple_format(comment.content) %>
