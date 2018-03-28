@@ -1,24 +1,17 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Thank you for participating our workshop! Read below if you are interested to continue with the project on your own.
 
-Things you may want to cover:
+What you could continue with:
 
-* Ruby version
+* Facebook/Google authentication using Devise
 
-* System dependencies
+* Editing and deleting comments inline under post
 
-* Configuration
+* Permission checks (editing and deleting your own stuff only)
 
-* Database creation
+* Cleaning out all routes and controller methods that are not used
 
-* Database initialization
+* Creating categories (for posts, belongs_to)
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Style additional views or change the whole UI of the app
